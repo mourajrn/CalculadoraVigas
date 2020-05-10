@@ -86,7 +86,9 @@ namespace CalculadoraVigas.Apresentacao
                     : Color.Black;
 
                 lbVc.Text = resposta.Vc.ToString("F2") + " kN";
-                txtAreaTracionada.Value = cortante > resposta.VRd2 ? 0 : resposta.AreaTransversal;
+                txtAreaTracionada.Value = cortante > resposta.VRd2 || cortante <= resposta.Vc 
+                    ? 0 
+                    : resposta.AreaTransversal;
             }
             catch (ArgumentException er)
             {
