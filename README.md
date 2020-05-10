@@ -1,6 +1,9 @@
 # Calculadora de Vigas
 Calculadora de vigas submetidas à flexão e esforço cortante.
 
+## Baixar o instalador da Calculadora de Vigas
+[Basta clicar aqui para solicitar o instalador](https://www.guiadaengenharia.com/materiais-gratuitos/calculadora-flexao-simples/)
+
 ## Exemplos de verificação
 Segue abaixo alguns exemplos conferindo os resultados da calculadora com o livro **Cálculo e Detalhamento de Estruturas Usuais de Concreto Armado Segundo a NBR 6118:2014**.
 
@@ -44,3 +47,25 @@ Segue abaixo alguns exemplos conferindo os resultados da calculadora com o livro
 
 **Diferenças:** 1,18 cm (6,78%) na profundidade da linha neutra e 0,3 cm² (0,32%) na área de aço.
 *Diferença provavelmente ocasiado pelo fato que o autor utilizar as tabelas KMD para esse exercício.*
+
+### Exemplo 2 do capítulo 6
+
+**Objetivo:** Obtenção da área de aço transversal de uma viga retangular pelo modelo I.
+
+**Resultado:** VRd2 igual a 6289,9 kN, Vc igual a 1108,8 kN e estribos de 12,5 mm a cada 27,5 cm.
+
+![Exemplo 2 do capítulo 6](https://www.guiadaengenharia.com/downloads/calculadoravigas/saida_cisalhamento-ex2.jpg)
+
+**Diferenças:** Sem diferenças para o VRd2 e para o detalhamento e 2,98 kN (0,27%) para o Vc.
+*A área de 9,12 cm²/m é o somatório dos dois ramos de um estribo simples. Dessa forma, é necessário 4,56 cm²/m em cada ramo.*
+
+### Exemplo 5 do capítulo 6
+
+**Objetivo:** Obtenção da área de aço transversal de uma viga retangular pelo modelo II.
+
+**Resultado:** VRd2 igual a 614 kN, Vc igual a 70,2 kN e estribos de 6,3 mm a cada 12,1 cm.
+*O autor resolve o exercício a partir das tensões. Os valores apresentados aqui foram calculados a partir da mesma.*
+
+![Exemplo 5 do capítulo 6](https://www.guiadaengenharia.com/downloads/calculadoravigas/saida_cisalhamento-ex5.jpg)
+
+**Diferenças:** Sem variação considerável para o VRd2 e para Vc. Resultando em estribos de 6,3 cm a cada 11,9 cm (1,65%).
