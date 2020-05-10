@@ -81,6 +81,7 @@ namespace CalculadoraVigas.Apresentacao
             UCFlexao.BringToFront();
             btnCisalhamento.Image = CalculadoraVigas.Properties.Resources.cisalhamento_normal;
             btnFlexao.Image = CalculadoraVigas.Properties.Resources.md_clique;
+            AvancaBordas();
         }
 
         private void btnCisalhamento_Click(object sender, EventArgs e)
@@ -88,6 +89,16 @@ namespace CalculadoraVigas.Apresentacao
             UCCisalhamento.BringToFront();
             btnCisalhamento.Image = CalculadoraVigas.Properties.Resources.cisalhamento_clique;
             btnFlexao.Image = CalculadoraVigas.Properties.Resources.md_normal;
+            AvancaBordas();
+        }
+
+        private void AvancaBordas()
+        {
+            foreach (Control controleSuperior in this.Controls)
+                if (controleSuperior is Panel)
+                    foreach (Control controleInferior in controleSuperior.Controls)
+                        if (controleInferior is Label)
+                            controleInferior.BringToFront();
         }
     }
 }
