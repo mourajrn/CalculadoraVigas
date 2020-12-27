@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicial));
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.lbSuperiorCabecalho = new System.Windows.Forms.Label();
             this.lbEsquerdaCabecalho = new System.Windows.Forms.Label();
             this.lbDireitaCabecalho = new System.Windows.Forms.Label();
-            this.btnFechar = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.lbEsquerdaContainer = new System.Windows.Forms.Label();
@@ -44,11 +43,10 @@
             this.lbCisalhamento = new System.Windows.Forms.Label();
             this.lbFlexao = new System.Windows.Forms.Label();
             this.lbFerramenta = new System.Windows.Forms.Label();
-            this.btnCisalhamento = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnFlexao = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCisalhamento = new System.Windows.Forms.Button();
+            this.btnFlexao = new System.Windows.Forms.Button();
             this.lbEsquerdaFerramentas = new System.Windows.Forms.Label();
             this.lbDireitaFerramentas = new System.Windows.Forms.Label();
-            this.sfToolTip1 = new Syncfusion.Windows.Forms.SfToolTip(this.components);
             this.panelSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelContainer.SuspendLayout();
@@ -111,22 +109,13 @@
             // btnFechar
             // 
             this.btnFechar.AccessibleName = "Button";
+            this.btnFechar.FlatAppearance.BorderSize = 0;
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.btnFechar.ForeColor = System.Drawing.Color.White;
             this.btnFechar.Location = new System.Drawing.Point(504, 15);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(30, 30);
-            this.btnFechar.Style.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnFechar.Style.DisabledBackColor = System.Drawing.Color.Empty;
-            this.btnFechar.Style.DisabledForeColor = System.Drawing.Color.Empty;
-            this.btnFechar.Style.FocusedBackColor = System.Drawing.Color.Empty;
-            this.btnFechar.Style.FocusedForeColor = System.Drawing.Color.White;
-            this.btnFechar.Style.ForeColor = System.Drawing.Color.White;
-            this.btnFechar.Style.HoverBackColor = System.Drawing.Color.Empty;
-            this.btnFechar.Style.HoverForeColor = System.Drawing.Color.White;
-            this.btnFechar.Style.PressedBackColor = System.Drawing.Color.Empty;
-            this.btnFechar.Style.PressedForeColor = System.Drawing.Color.White;
             this.btnFechar.TabIndex = 0;
             this.btnFechar.Text = "X";
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
@@ -243,57 +232,26 @@
             // btnCisalhamento
             // 
             this.btnCisalhamento.AccessibleName = "Button";
+            this.btnCisalhamento.FlatAppearance.BorderSize = 0;
+            this.btnCisalhamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCisalhamento.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnCisalhamento.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnCisalhamento.ImageSize = new System.Drawing.Size(50, 50);
             this.btnCisalhamento.Location = new System.Drawing.Point(257, 5);
             this.btnCisalhamento.Margin = new System.Windows.Forms.Padding(0);
             this.btnCisalhamento.Name = "btnCisalhamento";
             this.btnCisalhamento.Size = new System.Drawing.Size(50, 50);
-            this.btnCisalhamento.Style.BackColor = System.Drawing.Color.White;
-            this.btnCisalhamento.Style.DisabledBackColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.DisabledForeColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.FocusedBackColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.FocusedForeColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.ForeColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.HoverBackColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.HoverForeColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.HoverImage = ((System.Drawing.Image)(resources.GetObject("resource.HoverImage")));
-            this.btnCisalhamento.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnCisalhamento.Style.PressedBackColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.PressedForeColor = System.Drawing.Color.Empty;
-            this.btnCisalhamento.Style.PressedImage = ((System.Drawing.Image)(resources.GetObject("resource.PressedImage")));
             this.btnCisalhamento.TabIndex = 3;
-            this.btnCisalhamento.TextMargin = new System.Windows.Forms.Padding(0);
-            this.sfToolTip1.SetToolTip(this.btnCisalhamento, "Calcular a área de aço transversal.");
             this.btnCisalhamento.Click += new System.EventHandler(this.btnCisalhamento_Click);
             // 
             // btnFlexao
             // 
             this.btnFlexao.AccessibleName = "Button";
+            this.btnFlexao.FlatAppearance.BorderSize = 0;
+            this.btnFlexao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFlexao.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnFlexao.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnFlexao.ImageSize = new System.Drawing.Size(50, 50);
             this.btnFlexao.Location = new System.Drawing.Point(128, 5);
             this.btnFlexao.Name = "btnFlexao";
             this.btnFlexao.Size = new System.Drawing.Size(50, 50);
-            this.btnFlexao.Style.BackColor = System.Drawing.Color.White;
-            this.btnFlexao.Style.DisabledBackColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.DisabledForeColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.FocusedBackColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.FocusedForeColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.ForeColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.HoverBackColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.HoverForeColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.HoverImage = ((System.Drawing.Image)(resources.GetObject("resource.HoverImage1")));
-            this.btnFlexao.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnFlexao.Style.PressedBackColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.PressedForeColor = System.Drawing.Color.Empty;
-            this.btnFlexao.Style.PressedImage = ((System.Drawing.Image)(resources.GetObject("resource.PressedImage1")));
             this.btnFlexao.TabIndex = 1;
-            this.btnFlexao.Text = "sfButton1";
-            this.btnFlexao.TextMargin = new System.Windows.Forms.Padding(0);
-            this.sfToolTip1.SetToolTip(this.btnFlexao, "Calcular a área de aço longitudinal.");
             this.btnFlexao.Click += new System.EventHandler(this.btnFlexao_Click);
             // 
             // lbEsquerdaFerramentas
@@ -349,7 +307,7 @@
         #endregion
         private System.Windows.Forms.Panel panelSuperior;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private Syncfusion.WinForms.Controls.SfButton btnFechar;
+        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.Label lbDireitaContainer;
         private System.Windows.Forms.Label lbDireitaCabecalho;
@@ -360,9 +318,9 @@
         private System.Windows.Forms.Label lbDireitaFerramentas;
         private System.Windows.Forms.Label lbSuperiorCabecalho;
         private System.Windows.Forms.Label lbEsquerdaCabecalho;
-        private Syncfusion.WinForms.Controls.SfButton btnCisalhamento;
-        private Syncfusion.WinForms.Controls.SfButton btnFlexao;
-        private Syncfusion.Windows.Forms.SfToolTip sfToolTip1;
+        private System.Windows.Forms.Button btnCisalhamento;
+        private System.Windows.Forms.Button btnFlexao;
+        //private Syncfusion.Windows.Forms.SfToolTip sfToolTip1;
         private System.Windows.Forms.Label lbFerramenta;
         private System.Windows.Forms.Label lbCisalhamento;
         private System.Windows.Forms.Label lbFlexao;

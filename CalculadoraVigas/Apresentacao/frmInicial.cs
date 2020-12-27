@@ -37,6 +37,13 @@ namespace CalculadoraVigas.Apresentacao
         public frmInicial()
         {
             InitializeComponent();
+            CarregaComponentes();
+        }
+
+        private void CarregaComponentes()
+        {
+            btnFlexao.Image = CalculadoraVigas.Properties.Resources.md_clique;
+            btnCisalhamento.Image = CalculadoraVigas.Properties.Resources.cisalhamento_normal;
         }
 
         private Point pontoInicialFormulario;

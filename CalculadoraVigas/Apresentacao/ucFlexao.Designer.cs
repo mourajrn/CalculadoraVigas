@@ -29,35 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucFlexao));
             this.tablePanelMateriais = new System.Windows.Forms.TableLayoutPanel();
             this.lbAco = new System.Windows.Forms.Label();
             this.lbFck = new System.Windows.Forms.Label();
-            this.txtFck = new Syncfusion.WinForms.Input.SfNumericTextBox();
-            this.sfComboBoxAco = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.ComboBoxAco = new System.Windows.Forms.ComboBox();
+            this.txtFck = new System.Windows.Forms.TextBox();
             this.tablePanelRetangular = new System.Windows.Forms.TableLayoutPanel();
             this.lbFormatoSecao = new System.Windows.Forms.Label();
-            this.btnSecaoRetangular = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnSecaoT = new Syncfusion.WinForms.Controls.SfButton();
             this.lbSecaoRetangular = new System.Windows.Forms.Label();
             this.lbSecaoT = new System.Windows.Forms.Label();
+            this.btnSecaoRetangular = new System.Windows.Forms.Button();
+            this.btnSecaoT = new System.Windows.Forms.Button();
             this.tablePanelSecaoRetangular = new System.Windows.Forms.TableLayoutPanel();
             this.lbLargura = new System.Windows.Forms.Label();
             this.lbAltura = new System.Windows.Forms.Label();
             this.lbDLinhaSuperior = new System.Windows.Forms.Label();
+            this.txtDLinhaInferior = new System.Windows.Forms.TextBox();
             this.lbDLinhaInferior = new System.Windows.Forms.Label();
-            this.txtLargura = new Syncfusion.WinForms.Input.SfNumericTextBox();
-            this.txtAltura = new Syncfusion.WinForms.Input.SfNumericTextBox();
-            this.txtDLinhaInferior = new Syncfusion.WinForms.Input.SfNumericTextBox();
-            this.txtDLinhaSuperior = new Syncfusion.WinForms.Input.SfNumericTextBox();
+            this.txtLargura = new System.Windows.Forms.TextBox();
+            this.txtAltura = new System.Windows.Forms.TextBox();
+            this.txtDLinhaSuperior = new System.Windows.Forms.TextBox();
             this.tablePanelSecaoT = new System.Windows.Forms.TableLayoutPanel();
             this.lbLarguraColaborante = new System.Windows.Forms.Label();
             this.lbEspessuraMesa = new System.Windows.Forms.Label();
-            this.txtLarguraColaborante = new Syncfusion.WinForms.Input.SfNumericTextBox();
-            this.txtEspessuraMesa = new Syncfusion.WinForms.Input.SfNumericTextBox();
+            this.txtLarguraColaborante = new System.Windows.Forms.TextBox();
+            this.txtEspessuraMesa = new System.Windows.Forms.TextBox();
             this.tablePanelMdAs = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCalculaAs = new Syncfusion.WinForms.Controls.SfButton();
-            this.btnCalculaMd = new Syncfusion.WinForms.Controls.SfButton();
+            this.btnCalculaMd = new System.Windows.Forms.Button();
+            this.btnCalculaAs = new System.Windows.Forms.Button();
             this.tableLayoutPanelResults = new System.Windows.Forms.TableLayoutPanel();
             this.lbAreaComprimida = new System.Windows.Forms.Label();
             this.lbRazaoLNTitulo = new System.Windows.Forms.Label();
@@ -65,15 +64,14 @@
             this.lbRazaoLN = new System.Windows.Forms.Label();
             this.lbLinhaNeutraTitulo = new System.Windows.Forms.Label();
             this.lbLinhaNeutra = new System.Windows.Forms.Label();
-            this.sfToolTip1 = new Syncfusion.Windows.Forms.SfToolTip(this.components);
-            this.txtMomento = new Syncfusion.WinForms.Input.SfNumericTextBox();
-            this.txtAreaTracionada = new Syncfusion.WinForms.Input.SfNumericTextBox();
             this.tablePanelSolucao = new System.Windows.Forms.TableLayoutPanel();
             this.lbMomento = new System.Windows.Forms.Label();
             this.lbAreaTracionada = new System.Windows.Forms.Label();
             this.lbArmaduraMinima = new System.Windows.Forms.Label();
+            this.txtMomento = new System.Windows.Forms.TextBox();
+            this.txtAreaTracionada = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tablePanelMateriais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sfComboBoxAco)).BeginInit();
             this.tablePanelRetangular.SuspendLayout();
             this.tablePanelSecaoRetangular.SuspendLayout();
             this.tablePanelSecaoT.SuspendLayout();
@@ -89,8 +87,8 @@
             this.tablePanelMateriais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tablePanelMateriais.Controls.Add(this.lbAco, 1, 0);
             this.tablePanelMateriais.Controls.Add(this.lbFck, 0, 0);
+            this.tablePanelMateriais.Controls.Add(this.ComboBoxAco, 1, 1);
             this.tablePanelMateriais.Controls.Add(this.txtFck, 0, 1);
-            this.tablePanelMateriais.Controls.Add(this.sfComboBoxAco, 1, 1);
             this.tablePanelMateriais.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanelMateriais.Location = new System.Drawing.Point(0, 0);
             this.tablePanelMateriais.Margin = new System.Windows.Forms.Padding(5);
@@ -112,7 +110,7 @@
             this.lbAco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAco.Name = "lbAco";
             this.lbAco.Size = new System.Drawing.Size(160, 30);
-            this.lbAco.TabIndex = 38;
+            this.lbAco.TabIndex = 1;
             this.lbAco.Text = "Aço";
             this.lbAco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -126,75 +124,41 @@
             this.lbFck.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFck.Name = "lbFck";
             this.lbFck.Size = new System.Drawing.Size(377, 30);
-            this.lbFck.TabIndex = 38;
+            this.lbFck.TabIndex = 0;
             this.lbFck.Text = "Resistência Característica do Concreto";
             this.lbFck.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ComboBoxAco
+            // 
+            this.ComboBoxAco.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ComboBoxAco.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.ComboBoxAco.FormattingEnabled = true;
+            this.ComboBoxAco.Location = new System.Drawing.Point(389, 38);
+            this.ComboBoxAco.Name = "ComboBoxAco";
+            this.ComboBoxAco.Size = new System.Drawing.Size(158, 31);
+            this.ComboBoxAco.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.ComboBoxAco, "Aço utilizado para as armaduras");
+            // 
             // txtFck
             // 
-            this.txtFck.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtFck.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFck.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtFck.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtFck.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtFck.HideTrailingZeros = true;
-            this.txtFck.Location = new System.Drawing.Point(25, 39);
+            this.txtFck.Location = new System.Drawing.Point(25, 35);
             this.txtFck.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtFck.MaxValue = 50D;
-            this.txtFck.MinValue = 0D;
             this.txtFck.Name = "txtFck";
-            this.txtFck.Prefix = "";
             this.txtFck.Size = new System.Drawing.Size(341, 32);
-            this.txtFck.Suffix = "MPa";
             this.txtFck.TabIndex = 0;
+            this.txtFck.Tag = "MPa";
             this.txtFck.Text = "0 MPa";
             this.txtFck.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sfToolTip1.SetToolTip(this.txtFck, "Resistência característica do concreto (fck na literatura).");
-            this.txtFck.WatermarkText = "MPa";
-            this.txtFck.TextChanged += new System.EventHandler(this.txtFck_Changed);
-            // 
-            // sfComboBoxAco
-            // 
-            this.sfComboBoxAco.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.sfComboBoxAco.BackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.sfComboBoxAco.DropDownStyle = Syncfusion.WinForms.ListView.Enums.DropDownStyle.DropDownList;
-            this.sfComboBoxAco.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.sfComboBoxAco.ForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Location = new System.Drawing.Point(406, 39);
-            this.sfComboBoxAco.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.sfComboBoxAco.Name = "sfComboBoxAco";
-            this.sfComboBoxAco.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.sfComboBoxAco.Size = new System.Drawing.Size(124, 32);
-            this.sfComboBoxAco.Style.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.BackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.DisabledBackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.DisabledForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.FocusedBackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.FocusedForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.ForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.HoverBackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.HoverForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.PressedBackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownButtonStyle.PressedForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownStyle.BorderColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.DropDownStyle.GripperForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.EditorStyle.BackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.EditorStyle.BorderColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.EditorStyle.DisabledBackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.EditorStyle.DisabledBorderColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.EditorStyle.DisabledForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.EditorStyle.DisabledWatermarkForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.EditorStyle.FocusedBorderColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.EditorStyle.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.sfComboBoxAco.Style.EditorStyle.ForeColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.ReadOnlyEditorStyle.BackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.ReadOnlyEditorStyle.BorderColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.ReadOnlyEditorStyle.DisabledBackColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.ReadOnlyEditorStyle.DisabledBorderColor = System.Drawing.Color.White;
-            this.sfComboBoxAco.Style.ReadOnlyEditorStyle.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.sfComboBoxAco.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.sfComboBoxAco.Style.TokenStyle.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.sfComboBoxAco.TabIndex = 1;
-            this.sfToolTip1.SetToolTip(this.sfComboBoxAco, "Tipo de aço utilizado.");
+            this.toolTip1.SetToolTip(this.txtFck, "Resistência característica do concreto em MPa");
+            this.txtFck.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtFck.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtFck.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtFck.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
             // 
             // tablePanelRetangular
             // 
@@ -205,10 +169,10 @@
             this.tablePanelRetangular.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.37615F));
             this.tablePanelRetangular.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.2844F));
             this.tablePanelRetangular.Controls.Add(this.lbFormatoSecao, 0, 0);
-            this.tablePanelRetangular.Controls.Add(this.btnSecaoRetangular, 1, 0);
-            this.tablePanelRetangular.Controls.Add(this.btnSecaoT, 3, 0);
             this.tablePanelRetangular.Controls.Add(this.lbSecaoRetangular, 2, 0);
             this.tablePanelRetangular.Controls.Add(this.lbSecaoT, 4, 0);
+            this.tablePanelRetangular.Controls.Add(this.btnSecaoRetangular, 1, 0);
+            this.tablePanelRetangular.Controls.Add(this.btnSecaoT, 3, 0);
             this.tablePanelRetangular.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanelRetangular.Location = new System.Drawing.Point(0, 76);
             this.tablePanelRetangular.Margin = new System.Windows.Forms.Padding(5);
@@ -229,68 +193,9 @@
             this.lbFormatoSecao.Margin = new System.Windows.Forms.Padding(0);
             this.lbFormatoSecao.Name = "lbFormatoSecao";
             this.lbFormatoSecao.Size = new System.Drawing.Size(143, 20);
-            this.lbFormatoSecao.TabIndex = 4;
+            this.lbFormatoSecao.TabIndex = 0;
             this.lbFormatoSecao.Text = "Formato da seção";
             this.lbFormatoSecao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnSecaoRetangular
-            // 
-            this.btnSecaoRetangular.AccessibleName = "Button";
-            this.btnSecaoRetangular.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSecaoRetangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSecaoRetangular.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnSecaoRetangular.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnSecaoRetangular.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSecaoRetangular.Location = new System.Drawing.Point(207, 10);
-            this.btnSecaoRetangular.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSecaoRetangular.Name = "btnSecaoRetangular";
-            this.btnSecaoRetangular.Size = new System.Drawing.Size(50, 50);
-            this.btnSecaoRetangular.Style.BackColor = System.Drawing.Color.White;
-            this.btnSecaoRetangular.Style.DisabledBackColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.DisabledForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.FocusedBackColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.FocusedForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.ForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.HoverBackColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.HoverForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.HoverImage = ((System.Drawing.Image)(resources.GetObject("resource.HoverImage")));
-            this.btnSecaoRetangular.Style.HoverImageForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnSecaoRetangular.Style.PressedBackColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.PressedForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoRetangular.Style.PressedImage = ((System.Drawing.Image)(resources.GetObject("resource.PressedImage")));
-            this.btnSecaoRetangular.TabIndex = 0;
-            this.sfToolTip1.SetToolTip(this.btnSecaoRetangular, "Selecione para calcular uma seção retangular.");
-            this.btnSecaoRetangular.Click += new System.EventHandler(this.btnSecaoRetangular_Click);
-            // 
-            // btnSecaoT
-            // 
-            this.btnSecaoT.AccessibleName = "Button";
-            this.btnSecaoT.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSecaoT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSecaoT.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnSecaoT.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnSecaoT.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSecaoT.Location = new System.Drawing.Point(377, 10);
-            this.btnSecaoT.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSecaoT.Name = "btnSecaoT";
-            this.btnSecaoT.Size = new System.Drawing.Size(50, 50);
-            this.btnSecaoT.Style.BackColor = System.Drawing.Color.White;
-            this.btnSecaoT.Style.DisabledBackColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.DisabledForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.FocusedBackColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.FocusedForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.ForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.HoverBackColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.HoverForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.HoverImage = global::CalculadoraVigas.Properties.Resources.t_hover;
-            this.btnSecaoT.Style.Image = global::CalculadoraVigas.Properties.Resources.t_normal;
-            this.btnSecaoT.Style.PressedBackColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.PressedForeColor = System.Drawing.Color.Empty;
-            this.btnSecaoT.Style.PressedImage = global::CalculadoraVigas.Properties.Resources.t_clique;
-            this.btnSecaoT.TabIndex = 1;
-            this.sfToolTip1.SetToolTip(this.btnSecaoT, "Selecione para calcular uma seção T.");
-            this.btnSecaoT.Click += new System.EventHandler(this.btnSecaoT_Click);
             // 
             // lbSecaoRetangular
             // 
@@ -302,7 +207,7 @@
             this.lbSecaoRetangular.Margin = new System.Windows.Forms.Padding(0);
             this.lbSecaoRetangular.Name = "lbSecaoRetangular";
             this.lbSecaoRetangular.Size = new System.Drawing.Size(89, 20);
-            this.lbSecaoRetangular.TabIndex = 4;
+            this.lbSecaoRetangular.TabIndex = 2;
             this.lbSecaoRetangular.Text = "Retangular";
             this.lbSecaoRetangular.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -320,6 +225,32 @@
             this.lbSecaoT.Text = "Seção T";
             this.lbSecaoT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSecaoRetangular
+            // 
+            this.btnSecaoRetangular.FlatAppearance.BorderSize = 0;
+            this.btnSecaoRetangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecaoRetangular.Image = global::CalculadoraVigas.Properties.Resources.retangular_clique;
+            this.btnSecaoRetangular.Location = new System.Drawing.Point(199, 8);
+            this.btnSecaoRetangular.Name = "btnSecaoRetangular";
+            this.btnSecaoRetangular.Size = new System.Drawing.Size(55, 54);
+            this.btnSecaoRetangular.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnSecaoRetangular, "Calcular uma seção retangular");
+            this.btnSecaoRetangular.UseVisualStyleBackColor = true;
+            this.btnSecaoRetangular.Click += new System.EventHandler(this.btnSecaoRetangular_Click);
+            // 
+            // btnSecaoT
+            // 
+            this.btnSecaoT.FlatAppearance.BorderSize = 0;
+            this.btnSecaoT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSecaoT.Image = global::CalculadoraVigas.Properties.Resources.t_normal;
+            this.btnSecaoT.Location = new System.Drawing.Point(374, 8);
+            this.btnSecaoT.Name = "btnSecaoT";
+            this.btnSecaoT.Size = new System.Drawing.Size(55, 54);
+            this.btnSecaoT.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnSecaoT, "Calcular uma seção T");
+            this.btnSecaoT.UseVisualStyleBackColor = true;
+            this.btnSecaoT.Click += new System.EventHandler(this.btnSecaoT_Click);
+            // 
             // tablePanelSecaoRetangular
             // 
             this.tablePanelSecaoRetangular.ColumnCount = 4;
@@ -330,10 +261,10 @@
             this.tablePanelSecaoRetangular.Controls.Add(this.lbLargura, 0, 0);
             this.tablePanelSecaoRetangular.Controls.Add(this.lbAltura, 1, 0);
             this.tablePanelSecaoRetangular.Controls.Add(this.lbDLinhaSuperior, 3, 0);
+            this.tablePanelSecaoRetangular.Controls.Add(this.txtDLinhaInferior, 2, 1);
             this.tablePanelSecaoRetangular.Controls.Add(this.lbDLinhaInferior, 2, 0);
             this.tablePanelSecaoRetangular.Controls.Add(this.txtLargura, 0, 1);
             this.tablePanelSecaoRetangular.Controls.Add(this.txtAltura, 1, 1);
-            this.tablePanelSecaoRetangular.Controls.Add(this.txtDLinhaInferior, 2, 1);
             this.tablePanelSecaoRetangular.Controls.Add(this.txtDLinhaSuperior, 3, 1);
             this.tablePanelSecaoRetangular.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanelSecaoRetangular.Location = new System.Drawing.Point(0, 146);
@@ -341,9 +272,9 @@
             this.tablePanelSecaoRetangular.Name = "tablePanelSecaoRetangular";
             this.tablePanelSecaoRetangular.Padding = new System.Windows.Forms.Padding(5);
             this.tablePanelSecaoRetangular.RowCount = 2;
-            this.tablePanelSecaoRetangular.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanelSecaoRetangular.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanelSecaoRetangular.Size = new System.Drawing.Size(555, 64);
+            this.tablePanelSecaoRetangular.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.92064F));
+            this.tablePanelSecaoRetangular.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.07937F));
+            this.tablePanelSecaoRetangular.Size = new System.Drawing.Size(555, 73);
             this.tablePanelSecaoRetangular.TabIndex = 2;
             // 
             // lbLargura
@@ -355,8 +286,8 @@
             this.lbLargura.Location = new System.Drawing.Point(7, 5);
             this.lbLargura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLargura.Name = "lbLargura";
-            this.lbLargura.Size = new System.Drawing.Size(132, 27);
-            this.lbLargura.TabIndex = 38;
+            this.lbLargura.Size = new System.Drawing.Size(132, 22);
+            this.lbLargura.TabIndex = 0;
             this.lbLargura.Text = "Largura";
             this.lbLargura.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -369,8 +300,8 @@
             this.lbAltura.Location = new System.Drawing.Point(143, 5);
             this.lbAltura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAltura.Name = "lbAltura";
-            this.lbAltura.Size = new System.Drawing.Size(132, 27);
-            this.lbAltura.TabIndex = 38;
+            this.lbAltura.Size = new System.Drawing.Size(132, 22);
+            this.lbAltura.TabIndex = 2;
             this.lbAltura.Text = "Altura";
             this.lbAltura.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -383,10 +314,29 @@
             this.lbDLinhaSuperior.Location = new System.Drawing.Point(415, 5);
             this.lbDLinhaSuperior.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDLinhaSuperior.Name = "lbDLinhaSuperior";
-            this.lbDLinhaSuperior.Size = new System.Drawing.Size(133, 27);
-            this.lbDLinhaSuperior.TabIndex = 38;
+            this.lbDLinhaSuperior.Size = new System.Drawing.Size(133, 22);
+            this.lbDLinhaSuperior.TabIndex = 6;
             this.lbDLinhaSuperior.Text = "ds\'";
             this.lbDLinhaSuperior.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // txtDLinhaInferior
+            // 
+            this.txtDLinhaInferior.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDLinhaInferior.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtDLinhaInferior.Location = new System.Drawing.Point(287, 27);
+            this.txtDLinhaInferior.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.txtDLinhaInferior.Name = "txtDLinhaInferior";
+            this.txtDLinhaInferior.Size = new System.Drawing.Size(116, 32);
+            this.txtDLinhaInferior.TabIndex = 2;
+            this.txtDLinhaInferior.Tag = "cm";
+            this.txtDLinhaInferior.Text = "0 cm";
+            this.txtDLinhaInferior.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtDLinhaInferior, "Distância do centro da armação tracionada para face de concreto mais tracionada e" +
+        "m cm");
+            this.txtDLinhaInferior.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtDLinhaInferior.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtDLinhaInferior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtDLinhaInferior.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
             // 
             // lbDLinhaInferior
             // 
@@ -397,8 +347,8 @@
             this.lbDLinhaInferior.Location = new System.Drawing.Point(279, 5);
             this.lbDLinhaInferior.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDLinhaInferior.Name = "lbDLinhaInferior";
-            this.lbDLinhaInferior.Size = new System.Drawing.Size(132, 27);
-            this.lbDLinhaInferior.TabIndex = 38;
+            this.lbDLinhaInferior.Size = new System.Drawing.Size(132, 22);
+            this.lbDLinhaInferior.TabIndex = 4;
             this.lbDLinhaInferior.Text = "di\'";
             this.lbDLinhaInferior.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -406,71 +356,56 @@
             // 
             this.txtLargura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLargura.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtLargura.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtLargura.HideTrailingZeros = true;
-            this.txtLargura.Location = new System.Drawing.Point(25, 32);
-            this.txtLargura.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtLargura.MinValue = 0D;
+            this.txtLargura.Location = new System.Drawing.Point(15, 27);
+            this.txtLargura.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.txtLargura.Name = "txtLargura";
-            this.txtLargura.Size = new System.Drawing.Size(96, 32);
-            this.txtLargura.Suffix = "cm";
+            this.txtLargura.Size = new System.Drawing.Size(116, 32);
             this.txtLargura.TabIndex = 0;
+            this.txtLargura.Tag = "cm";
             this.txtLargura.Text = "0 cm";
             this.txtLargura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sfToolTip1.SetToolTip(this.txtLargura, "Largura da nervura (bw na literatura).");
-            this.txtLargura.WatermarkText = "cm";
+            this.toolTip1.SetToolTip(this.txtLargura, "Largura da nervura em cm");
+            this.txtLargura.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtLargura.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtLargura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtLargura.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
             // 
             // txtAltura
             // 
             this.txtAltura.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAltura.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtAltura.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtAltura.HideTrailingZeros = true;
-            this.txtAltura.Location = new System.Drawing.Point(161, 32);
-            this.txtAltura.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtAltura.MinValue = 0D;
+            this.txtAltura.Location = new System.Drawing.Point(151, 27);
+            this.txtAltura.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(96, 32);
-            this.txtAltura.Suffix = "cm";
+            this.txtAltura.Size = new System.Drawing.Size(116, 32);
             this.txtAltura.TabIndex = 1;
+            this.txtAltura.Tag = "cm";
             this.txtAltura.Text = "0 cm";
             this.txtAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sfToolTip1.SetToolTip(this.txtAltura, "");
-            this.txtAltura.WatermarkText = "cm";
-            // 
-            // txtDLinhaInferior
-            // 
-            this.txtDLinhaInferior.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtDLinhaInferior.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtDLinhaInferior.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtDLinhaInferior.Location = new System.Drawing.Point(297, 32);
-            this.txtDLinhaInferior.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtDLinhaInferior.MinValue = 0D;
-            this.txtDLinhaInferior.Name = "txtDLinhaInferior";
-            this.txtDLinhaInferior.Size = new System.Drawing.Size(96, 32);
-            this.txtDLinhaInferior.Suffix = "cm";
-            this.txtDLinhaInferior.TabIndex = 2;
-            this.txtDLinhaInferior.Text = "0,00 cm";
-            this.txtDLinhaInferior.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sfToolTip1.SetToolTip(this.txtDLinhaInferior, "");
-            this.txtDLinhaInferior.WatermarkText = "cm";
+            this.toolTip1.SetToolTip(this.txtAltura, "Altura total da seção em cm");
+            this.txtAltura.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtAltura.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtAltura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtAltura.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
             // 
             // txtDLinhaSuperior
             // 
             this.txtDLinhaSuperior.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDLinhaSuperior.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtDLinhaSuperior.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtDLinhaSuperior.Location = new System.Drawing.Point(433, 32);
-            this.txtDLinhaSuperior.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtDLinhaSuperior.MinValue = 0D;
+            this.txtDLinhaSuperior.Location = new System.Drawing.Point(423, 27);
+            this.txtDLinhaSuperior.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.txtDLinhaSuperior.Name = "txtDLinhaSuperior";
-            this.txtDLinhaSuperior.Size = new System.Drawing.Size(97, 32);
-            this.txtDLinhaSuperior.Suffix = "cm";
+            this.txtDLinhaSuperior.Size = new System.Drawing.Size(117, 32);
             this.txtDLinhaSuperior.TabIndex = 3;
-            this.txtDLinhaSuperior.Text = "0,00 cm";
+            this.txtDLinhaSuperior.Tag = "cm";
+            this.txtDLinhaSuperior.Text = "0 cm";
             this.txtDLinhaSuperior.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sfToolTip1.SetToolTip(this.txtDLinhaSuperior, "Distância do centro das armações comprimidas para borda comprimida.");
-            this.txtDLinhaSuperior.WatermarkText = "cm";
+            this.toolTip1.SetToolTip(this.txtDLinhaSuperior, "Distância do centro da armação comprimida para face de concreto mais comprimida e" +
+        "m cm");
+            this.txtDLinhaSuperior.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtDLinhaSuperior.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtDLinhaSuperior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtDLinhaSuperior.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
             // 
             // tablePanelSecaoT
             // 
@@ -482,7 +417,7 @@
             this.tablePanelSecaoT.Controls.Add(this.txtLarguraColaborante, 0, 1);
             this.tablePanelSecaoT.Controls.Add(this.txtEspessuraMesa, 1, 1);
             this.tablePanelSecaoT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tablePanelSecaoT.Location = new System.Drawing.Point(0, 210);
+            this.tablePanelSecaoT.Location = new System.Drawing.Point(0, 219);
             this.tablePanelSecaoT.Margin = new System.Windows.Forms.Padding(5);
             this.tablePanelSecaoT.Name = "tablePanelSecaoT";
             this.tablePanelSecaoT.Padding = new System.Windows.Forms.Padding(5);
@@ -523,47 +458,47 @@
             // 
             // txtLarguraColaborante
             // 
-            this.txtLarguraColaborante.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtLarguraColaborante.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLarguraColaborante.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtLarguraColaborante.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtLarguraColaborante.HideTrailingZeros = true;
-            this.txtLarguraColaborante.Location = new System.Drawing.Point(25, 34);
-            this.txtLarguraColaborante.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtLarguraColaborante.MinValue = 0D;
+            this.txtLarguraColaborante.Location = new System.Drawing.Point(15, 34);
+            this.txtLarguraColaborante.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.txtLarguraColaborante.Name = "txtLarguraColaborante";
-            this.txtLarguraColaborante.Size = new System.Drawing.Size(232, 32);
-            this.txtLarguraColaborante.Suffix = "cm";
+            this.txtLarguraColaborante.Size = new System.Drawing.Size(252, 32);
             this.txtLarguraColaborante.TabIndex = 0;
+            this.txtLarguraColaborante.Tag = "cm";
             this.txtLarguraColaborante.Text = "0 cm";
             this.txtLarguraColaborante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtLarguraColaborante.WatermarkText = "cm";
+            this.txtLarguraColaborante.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtLarguraColaborante.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtLarguraColaborante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtLarguraColaborante.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
             // 
             // txtEspessuraMesa
             // 
-            this.txtEspessuraMesa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtEspessuraMesa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEspessuraMesa.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtEspessuraMesa.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEspessuraMesa.HideTrailingZeros = true;
-            this.txtEspessuraMesa.Location = new System.Drawing.Point(297, 34);
-            this.txtEspessuraMesa.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtEspessuraMesa.MinValue = 0D;
+            this.txtEspessuraMesa.Location = new System.Drawing.Point(287, 34);
+            this.txtEspessuraMesa.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.txtEspessuraMesa.Name = "txtEspessuraMesa";
-            this.txtEspessuraMesa.Size = new System.Drawing.Size(233, 32);
-            this.txtEspessuraMesa.Suffix = "cm";
+            this.txtEspessuraMesa.Size = new System.Drawing.Size(253, 32);
             this.txtEspessuraMesa.TabIndex = 1;
+            this.txtEspessuraMesa.Tag = "cm";
             this.txtEspessuraMesa.Text = "0 cm";
             this.txtEspessuraMesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtEspessuraMesa.WatermarkText = "cm";
+            this.txtEspessuraMesa.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtEspessuraMesa.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtEspessuraMesa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtEspessuraMesa.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
             // 
             // tablePanelMdAs
             // 
             this.tablePanelMdAs.ColumnCount = 2;
             this.tablePanelMdAs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tablePanelMdAs.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanelMdAs.Controls.Add(this.btnCalculaAs, 1, 0);
             this.tablePanelMdAs.Controls.Add(this.btnCalculaMd, 0, 0);
+            this.tablePanelMdAs.Controls.Add(this.btnCalculaAs, 1, 0);
             this.tablePanelMdAs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tablePanelMdAs.Location = new System.Drawing.Point(0, 369);
+            this.tablePanelMdAs.Location = new System.Drawing.Point(0, 381);
             this.tablePanelMdAs.Margin = new System.Windows.Forms.Padding(5);
             this.tablePanelMdAs.Name = "tablePanelMdAs";
             this.tablePanelMdAs.Padding = new System.Windows.Forms.Padding(5);
@@ -573,70 +508,33 @@
             this.tablePanelMdAs.Size = new System.Drawing.Size(555, 76);
             this.tablePanelMdAs.TabIndex = 5;
             // 
-            // btnCalculaAs
-            // 
-            this.btnCalculaAs.AccessibleName = "Button";
-            this.btnCalculaAs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCalculaAs.BackColor = System.Drawing.Color.White;
-            this.btnCalculaAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculaAs.FocusRectangleVisible = true;
-            this.btnCalculaAs.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnCalculaAs.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnCalculaAs.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnCalculaAs.Location = new System.Drawing.Point(388, 13);
-            this.btnCalculaAs.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCalculaAs.Name = "btnCalculaAs";
-            this.btnCalculaAs.Size = new System.Drawing.Size(50, 50);
-            this.btnCalculaAs.Style.BackColor = System.Drawing.Color.White;
-            this.btnCalculaAs.Style.DisabledBackColor = System.Drawing.Color.Empty;
-            this.btnCalculaAs.Style.DisabledForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaAs.Style.FocusedBackColor = System.Drawing.Color.Empty;
-            this.btnCalculaAs.Style.FocusedForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaAs.Style.ForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaAs.Style.HoverBackColor = System.Drawing.Color.Empty;
-            this.btnCalculaAs.Style.HoverForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaAs.Style.HoverImage = global::CalculadoraVigas.Properties.Resources.as_hover;
-            this.btnCalculaAs.Style.Image = global::CalculadoraVigas.Properties.Resources.as_normal;
-            this.btnCalculaAs.Style.PressedBackColor = System.Drawing.Color.Empty;
-            this.btnCalculaAs.Style.PressedImage = global::CalculadoraVigas.Properties.Resources.as_clique;
-            this.btnCalculaAs.TabIndex = 1;
-            this.btnCalculaAs.TextMargin = new System.Windows.Forms.Padding(0);
-            this.sfToolTip1.SetToolTip(this.btnCalculaAs, "Selecione essa opção para calcular a área de aço necessária para determinado mome" +
-        "nto de cálculo.");
-            this.btnCalculaAs.UseVisualStyleBackColor = false;
-            this.btnCalculaAs.Click += new System.EventHandler(this.btnCalculaAs_Click);
-            // 
             // btnCalculaMd
             // 
-            this.btnCalculaMd.AccessibleName = "Button";
             this.btnCalculaMd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCalculaMd.BackColor = System.Drawing.Color.White;
-            this.btnCalculaMd.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.btnCalculaMd.ImageMargin = new System.Windows.Forms.Padding(0);
-            this.btnCalculaMd.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnCalculaMd.Location = new System.Drawing.Point(116, 13);
-            this.btnCalculaMd.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCalculaMd.FlatAppearance.BorderSize = 0;
+            this.btnCalculaMd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculaMd.Image = global::CalculadoraVigas.Properties.Resources.md_normal;
+            this.btnCalculaMd.Location = new System.Drawing.Point(113, 11);
             this.btnCalculaMd.Name = "btnCalculaMd";
-            this.btnCalculaMd.Size = new System.Drawing.Size(50, 50);
-            this.btnCalculaMd.Style.BackColor = System.Drawing.Color.White;
-            this.btnCalculaMd.Style.DisabledBackColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.DisabledForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.FocusedBackColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.FocusedForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.ForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.HoverBackColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.HoverForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.HoverImage = global::CalculadoraVigas.Properties.Resources.md_hover;
-            this.btnCalculaMd.Style.Image = global::CalculadoraVigas.Properties.Resources.md_normal;
-            this.btnCalculaMd.Style.PressedBackColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.PressedForeColor = System.Drawing.Color.Empty;
-            this.btnCalculaMd.Style.PressedImage = global::CalculadoraVigas.Properties.Resources.md_normal;
+            this.btnCalculaMd.Size = new System.Drawing.Size(55, 54);
             this.btnCalculaMd.TabIndex = 0;
-            this.btnCalculaMd.TextMargin = new System.Windows.Forms.Padding(0);
-            this.sfToolTip1.SetToolTip(this.btnCalculaMd, "Selecione essa opção para calcular o momento resistente de cálculo para determina" +
-        "da área de aço.");
-            this.btnCalculaMd.UseVisualStyleBackColor = false;
+            this.toolTip1.SetToolTip(this.btnCalculaMd, "Calcular o momento dada a área tracionada");
+            this.btnCalculaMd.UseVisualStyleBackColor = true;
             this.btnCalculaMd.Click += new System.EventHandler(this.btnCalculaMd_Click);
+            // 
+            // btnCalculaAs
+            // 
+            this.btnCalculaAs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCalculaAs.FlatAppearance.BorderSize = 0;
+            this.btnCalculaAs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculaAs.Image = global::CalculadoraVigas.Properties.Resources.as_normal;
+            this.btnCalculaAs.Location = new System.Drawing.Point(386, 11);
+            this.btnCalculaAs.Name = "btnCalculaAs";
+            this.btnCalculaAs.Size = new System.Drawing.Size(55, 54);
+            this.btnCalculaAs.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnCalculaAs, "Calcular a área tracionada dado o momento");
+            this.btnCalculaAs.UseVisualStyleBackColor = true;
+            this.btnCalculaAs.Click += new System.EventHandler(this.btnCalculaAs_Click);
             // 
             // tableLayoutPanelResults
             // 
@@ -674,6 +572,7 @@
             this.lbAreaComprimida.TabIndex = 0;
             this.lbAreaComprimida.Text = "0,00 cm²";
             this.lbAreaComprimida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lbAreaComprimida, "Área de aço comprimida (armadura dupla)");
             // 
             // lbRazaoLNTitulo
             // 
@@ -716,6 +615,7 @@
             this.lbRazaoLN.TabIndex = 0;
             this.lbRazaoLN.Text = "0,00";
             this.lbRazaoLN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.toolTip1.SetToolTip(this.lbRazaoLN, "Percentual da linha neutra em relação a altura útil");
             // 
             // lbLinhaNeutraTitulo
             // 
@@ -744,42 +644,7 @@
             this.lbLinhaNeutra.TabIndex = 0;
             this.lbLinhaNeutra.Text = "0,00 cm";
             this.lbLinhaNeutra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtMomento
-            // 
-            this.txtMomento.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtMomento.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtMomento.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMomento.HideTrailingZeros = true;
-            this.txtMomento.Location = new System.Drawing.Point(25, 35);
-            this.txtMomento.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtMomento.MinValue = 0D;
-            this.txtMomento.Name = "txtMomento";
-            this.txtMomento.Size = new System.Drawing.Size(232, 32);
-            this.txtMomento.Suffix = "kN.cm";
-            this.txtMomento.TabIndex = 0;
-            this.txtMomento.Text = "0 kN.cm";
-            this.txtMomento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sfToolTip1.SetToolTip(this.txtMomento, "Momento de cálculo da seção (MSd da literatura).");
-            this.txtMomento.WatermarkText = "kN.cm";
-            // 
-            // txtAreaTracionada
-            // 
-            this.txtAreaTracionada.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtAreaTracionada.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtAreaTracionada.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtAreaTracionada.HideTrailingZeros = true;
-            this.txtAreaTracionada.Location = new System.Drawing.Point(297, 35);
-            this.txtAreaTracionada.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.txtAreaTracionada.MinValue = 0D;
-            this.txtAreaTracionada.Name = "txtAreaTracionada";
-            this.txtAreaTracionada.Size = new System.Drawing.Size(233, 32);
-            this.txtAreaTracionada.Suffix = "cm²";
-            this.txtAreaTracionada.TabIndex = 1;
-            this.txtAreaTracionada.Text = "0 cm²";
-            this.txtAreaTracionada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.sfToolTip1.SetToolTip(this.txtAreaTracionada, "Área de aço tracionada a ser informada ou solicitada.");
-            this.txtAreaTracionada.WatermarkText = "cm²";
+            this.toolTip1.SetToolTip(this.lbLinhaNeutra, "Profundidade da linha neutra em cm");
             // 
             // tablePanelSolucao
             // 
@@ -788,19 +653,19 @@
             this.tablePanelSolucao.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tablePanelSolucao.Controls.Add(this.lbMomento, 0, 0);
             this.tablePanelSolucao.Controls.Add(this.lbAreaTracionada, 1, 0);
+            this.tablePanelSolucao.Controls.Add(this.lbArmaduraMinima, 1, 2);
             this.tablePanelSolucao.Controls.Add(this.txtMomento, 0, 1);
             this.tablePanelSolucao.Controls.Add(this.txtAreaTracionada, 1, 1);
-            this.tablePanelSolucao.Controls.Add(this.lbArmaduraMinima, 1, 2);
             this.tablePanelSolucao.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tablePanelSolucao.Location = new System.Drawing.Point(0, 278);
+            this.tablePanelSolucao.Location = new System.Drawing.Point(0, 287);
             this.tablePanelSolucao.Margin = new System.Windows.Forms.Padding(5);
             this.tablePanelSolucao.Name = "tablePanelSolucao";
             this.tablePanelSolucao.Padding = new System.Windows.Forms.Padding(5);
             this.tablePanelSolucao.RowCount = 3;
-            this.tablePanelSolucao.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablePanelSolucao.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tablePanelSolucao.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tablePanelSolucao.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tablePanelSolucao.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tablePanelSolucao.Size = new System.Drawing.Size(555, 91);
+            this.tablePanelSolucao.Size = new System.Drawing.Size(555, 94);
             this.tablePanelSolucao.TabIndex = 4;
             // 
             // lbMomento
@@ -812,7 +677,7 @@
             this.lbMomento.Location = new System.Drawing.Point(7, 5);
             this.lbMomento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMomento.Name = "lbMomento";
-            this.lbMomento.Size = new System.Drawing.Size(268, 30);
+            this.lbMomento.Size = new System.Drawing.Size(268, 21);
             this.lbMomento.TabIndex = 38;
             this.lbMomento.Text = "Momento de cálculo";
             this.lbMomento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -826,7 +691,7 @@
             this.lbAreaTracionada.Location = new System.Drawing.Point(279, 5);
             this.lbAreaTracionada.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAreaTracionada.Name = "lbAreaTracionada";
-            this.lbAreaTracionada.Size = new System.Drawing.Size(269, 30);
+            this.lbAreaTracionada.Size = new System.Drawing.Size(269, 21);
             this.lbAreaTracionada.TabIndex = 38;
             this.lbAreaTracionada.Text = "As,tracionada";
             this.lbAreaTracionada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -837,13 +702,56 @@
             this.lbArmaduraMinima.AutoSize = true;
             this.lbArmaduraMinima.Font = new System.Drawing.Font("Century Gothic", 7F);
             this.lbArmaduraMinima.ForeColor = System.Drawing.Color.Red;
-            this.lbArmaduraMinima.Location = new System.Drawing.Point(305, 65);
+            this.lbArmaduraMinima.Location = new System.Drawing.Point(305, 68);
             this.lbArmaduraMinima.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbArmaduraMinima.Name = "lbArmaduraMinima";
             this.lbArmaduraMinima.Size = new System.Drawing.Size(217, 17);
             this.lbArmaduraMinima.TabIndex = 40;
             this.lbArmaduraMinima.Text = "Armadura mínima não considerada";
             this.lbArmaduraMinima.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // txtMomento
+            // 
+            this.txtMomento.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMomento.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtMomento.Location = new System.Drawing.Point(15, 26);
+            this.txtMomento.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.txtMomento.Name = "txtMomento";
+            this.txtMomento.Size = new System.Drawing.Size(252, 32);
+            this.txtMomento.TabIndex = 0;
+            this.txtMomento.Tag = "kN.cm";
+            this.txtMomento.Text = "0 kN.cm";
+            this.txtMomento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtMomento, "Momento já majorado em kN.cm");
+            this.txtMomento.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtMomento.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtMomento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtMomento.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
+            // 
+            // txtAreaTracionada
+            // 
+            this.txtAreaTracionada.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAreaTracionada.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtAreaTracionada.Location = new System.Drawing.Point(287, 26);
+            this.txtAreaTracionada.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.txtAreaTracionada.Name = "txtAreaTracionada";
+            this.txtAreaTracionada.Size = new System.Drawing.Size(253, 32);
+            this.txtAreaTracionada.TabIndex = 1;
+            this.txtAreaTracionada.Tag = "cm²";
+            this.txtAreaTracionada.Text = "0 cm²";
+            this.txtAreaTracionada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.txtAreaTracionada, "Área de aço tracionada em cm²");
+            this.txtAreaTracionada.Click += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtAreaTracionada.Enter += new System.EventHandler(this.textBoxSelectAllOnEnter);
+            this.txtAreaTracionada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAllowNumericOnly);
+            this.txtAreaTracionada.Leave += new System.EventHandler(this.textBoxSplitOnLeave);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 100;
+            this.toolTip1.AutoPopDelay = 5000;
+            this.toolTip1.InitialDelay = 100;
+            this.toolTip1.ReshowDelay = 0;
             // 
             // ucFlexao
             // 
@@ -863,7 +771,6 @@
             this.Size = new System.Drawing.Size(555, 550);
             this.tablePanelMateriais.ResumeLayout(false);
             this.tablePanelMateriais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sfComboBoxAco)).EndInit();
             this.tablePanelRetangular.ResumeLayout(false);
             this.tablePanelRetangular.PerformLayout();
             this.tablePanelSecaoRetangular.ResumeLayout(false);
@@ -884,44 +791,44 @@
         private System.Windows.Forms.TableLayoutPanel tablePanelMateriais;
         private System.Windows.Forms.Label lbAco;
         private System.Windows.Forms.Label lbFck;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtFck;
-        private Syncfusion.WinForms.ListView.SfComboBox sfComboBoxAco;
         private System.Windows.Forms.TableLayoutPanel tablePanelRetangular;
         private System.Windows.Forms.Label lbFormatoSecao;
-        private Syncfusion.WinForms.Controls.SfButton btnSecaoT;
-        private Syncfusion.WinForms.Controls.SfButton btnSecaoRetangular;
         private System.Windows.Forms.TableLayoutPanel tablePanelSecaoRetangular;
         private System.Windows.Forms.Label lbLargura;
         private System.Windows.Forms.Label lbAltura;
         private System.Windows.Forms.Label lbDLinhaSuperior;
         private System.Windows.Forms.Label lbDLinhaInferior;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtLargura;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtAltura;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtDLinhaInferior;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtDLinhaSuperior;
         private System.Windows.Forms.TableLayoutPanel tablePanelSecaoT;
         private System.Windows.Forms.Label lbLarguraColaborante;
         private System.Windows.Forms.Label lbEspessuraMesa;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtLarguraColaborante;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtEspessuraMesa;
         private System.Windows.Forms.TableLayoutPanel tablePanelMdAs;
-        private Syncfusion.WinForms.Controls.SfButton btnCalculaAs;
-        private Syncfusion.WinForms.Controls.SfButton btnCalculaMd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelResults;
         private System.Windows.Forms.Label lbAreaComprimidaTitulo;
         private System.Windows.Forms.Label lbAreaComprimida;
         private System.Windows.Forms.Label lbLinhaNeutra;
         private System.Windows.Forms.Label lbLinhaNeutraTitulo;
         private System.Windows.Forms.Label lbRazaoLNTitulo;
-        private Syncfusion.Windows.Forms.SfToolTip sfToolTip1;
         private System.Windows.Forms.TableLayoutPanel tablePanelSolucao;
         private System.Windows.Forms.Label lbMomento;
         private System.Windows.Forms.Label lbAreaTracionada;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtMomento;
-        private Syncfusion.WinForms.Input.SfNumericTextBox txtAreaTracionada;
         private System.Windows.Forms.Label lbSecaoRetangular;
         private System.Windows.Forms.Label lbSecaoT;
         private System.Windows.Forms.Label lbRazaoLN;
         private System.Windows.Forms.Label lbArmaduraMinima;
+        private System.Windows.Forms.ComboBox ComboBoxAco;
+        private System.Windows.Forms.Button btnSecaoRetangular;
+        private System.Windows.Forms.Button btnSecaoT;
+        private System.Windows.Forms.TextBox txtLargura;
+        private System.Windows.Forms.TextBox txtAltura;
+        private System.Windows.Forms.Button btnCalculaMd;
+        private System.Windows.Forms.Button btnCalculaAs;
+        private System.Windows.Forms.TextBox txtDLinhaInferior;
+        private System.Windows.Forms.TextBox txtDLinhaSuperior;
+        private System.Windows.Forms.TextBox txtLarguraColaborante;
+        private System.Windows.Forms.TextBox txtEspessuraMesa;
+        private System.Windows.Forms.TextBox txtMomento;
+        private System.Windows.Forms.TextBox txtFck;
+        private System.Windows.Forms.TextBox txtAreaTracionada;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
